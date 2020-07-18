@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     activemodel (5.2.4.3)
       activesupport (= 5.2.4.3)
@@ -13,8 +14,12 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     concurrent-ruby (1.1.6)
+    ffi (1.13.1)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
+    listen (3.2.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     minitest (5.14.1)
     mustermann (1.0.3)
     pg (0.21.0)
@@ -22,6 +27,11 @@ GEM
     rack-protection (2.0.5)
       rack
     rake (13.0.1)
+    rb-fsevent (0.10.4)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+    rerun (0.13.0)
+      listen (~> 3.0)
     sinatra (2.0.5)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -41,6 +51,7 @@ PLATFORMS
 DEPENDENCIES
   pg
   rake
+  rerun
   sinatra
   sinatra-activerecord
 
