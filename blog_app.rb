@@ -1,7 +1,5 @@
-require "sinatra"
-
 class BlogApp < Sinatra::Base
   get '/' do
-    'Welcome to BookList!'
+    "Welcome to BookList! #{User.count}"
   end
 end
