@@ -7,6 +7,7 @@ gem 'sinatra-contrib'
 gem 'rake'
 gem 'pg'
 gem 'oj'
+gem 'kaminari'
 group :development do
   gem 'rerun'
   gem 'pry'
