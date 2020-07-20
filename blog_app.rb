@@ -17,12 +17,23 @@ class BlogApp < Sinatra::Base
   end
 
   get '/posts' do
-    json Post.order(rating: :desc).page(params[:page]).per(params[:limit] || DEFAULT_LIMIT)
+    posts = Post.order(rating: :desc).page(params[:page]).per(params[:limit] || DEFAULT_LIMIT)
+    json posts.map { |post| post.attributes.slice('title', 'content') }
   end
 
   post '/marks' do
     rating = RatePostService.new(*request_payload.values_at(:post_id, :value)).call
     json rating: rating
+  end
+
+  get '/suspicious_ips' do
+    json Post
+      .joins(:user)
+      .group('posts.author_ip')
+      .select('posts.author_ip, array_agg(distinct users.login) as authors')
+      .having('array_length(array_agg(distinct users.login), 1) > 1').map do |tuple|
+      tuple.attributes.slice('author_ip', 'authors')
+    end
   end
 
   error StandardError do
