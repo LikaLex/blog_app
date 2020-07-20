@@ -10,3 +10,5 @@
  bundle exec rake db:seed
 
 * Run project: bundle exec rerun rackup
+
+* Run specs: bundle exec rspec
