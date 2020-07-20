@@ -8,6 +8,8 @@ gem 'rake'
 gem 'pg'
 gem 'oj'
 gem 'kaminari'
+gem 'faraday'
+gem 'faker'
 group :development do
   gem 'rerun'
   gem 'pry'

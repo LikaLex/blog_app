@@ -46,9 +46,4 @@ class BlogApp < Sinatra::Base
   def request_payload
     @request_payload ||= Oj.load(request.body.read).with_indifferent_access
   end
-
-  # def render_error(error, status = nil)
-  #   status status || :unprocessable_entity
-  #   json error: error
-  # end
 end

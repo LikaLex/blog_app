@@ -25,6 +25,10 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.12.0)
+      i18n (>= 1.6, < 2)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
@@ -50,6 +54,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     multi_json (1.15.0)
+    multipart-post (2.1.1)
     mustermann (1.0.3)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
@@ -96,6 +101,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faker
+  faraday
   kaminari
   oj
   pg
